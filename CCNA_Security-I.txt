@@ -1,3 +1,9 @@
+#				   		#				
+#		CCNA Security Notes		#	
+#					 	#
+
+### Learning Notes I ###
+
 # Securing the Management Plane - AAA
 
 AAA:
@@ -230,3 +236,59 @@ Note: if a non default list was used in authentication, authorization and accoun
 - Verify SNMP servers
   show snmp host
   show snmp sessions
+
+# Zone Based Firewall Policy Elements
+- Claas Map
+  Identifying Traffic:
+  - Access Lists
+  - User Groups
+  - Protocl
+  - Nested Class-Maps(s)
+- Policy Map
+  Actions to Take:
+  - PASS - Simply permits traffic (No state table entry)
+  - DROP - Drop traffic
+  - INSPECT - Permit traffic and create state table entry
+  - LOG - Log dropped traffic
+- Service Policy
+  Applies Service Policy to Zone Pairs
+  - Single statement applied
+  - Directionality is part of the zone pair
+- Zone Pairs
+  Traffic Flow Between Two Zones
+  - Unidirectional
+  - Does not affect traffic within a zone
+  - Soure and destination zones specified
+  - Traffic dropped if no policy exists
+
+# ASA Features/Functionality
+- Packet Fitlering
+  Access-Lists, permit/deny
+  Named only
+  Standard or Extended
+  Network Masks
+- Stateful Inspection/Filtering
+  Permit/deny plus state table
+  
+# ASA NAT Support
+  Static NAT
+  Dynamic NAT
+  PAT
+  Exemption/Policy 
+
+# ASA Factory Default
+  conf t
+  config factory-default
+
+# Threat Detection Techniques
+- Signature-Based
+- Anomaly-Based
+  Method of IDS/IPS detection that uses deviation from baseling network traffic behavior to determine potentially dangerous traffic
+- Policy-Based
+- Reputation-Based, Ironport devices
+
+# Intrusion Detection Terminology
+- False Positive - false alarm, legitimate traffic triggers a system alarm
+- False Negative - Malicious traffic has not been detected
+- Tru Positive - Alerts are not beeing generated, genuine traffic
+- True Negative - Malicious traffic is caught and detected by IDS/IPS
