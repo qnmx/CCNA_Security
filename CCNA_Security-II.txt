@@ -433,12 +433,12 @@ ASA1(config-pmap-c)# inspect icmp
 - ASDM: Configuration > Firewall > NAT Rules
 - Sample configuration:
 
-object network PC-1
-host 10.0.10.1
-description PC-1 IP Address
-object network NAT_IP_1
-host 144.144.144.4
-nat 1 source static PC-1 NAT_IP_1 unidirectional
+object network NAME_1
+host X.X.X.X
+description DESCRIPTION
+object network NAME_2
+host X.X.X.X
+nat 1 source static NAME_1 NAME_2 unidirectional
 
 - NAT verification
   show xlate
@@ -447,17 +447,17 @@ nat 1 source static PC-1 NAT_IP_1 unidirectional
 # Dynamic NAT
 - Sample configuration:
 
-object network NAT_Pool_1
-range 88.88.88.1 88.88.88.10
-description Translated NAT Range
-object network VLAN_10
-description Vlan 10 Subnet
-nat dynamic NAT_Pool_1
+object network Pool_NAME
+range X.X.X.X X.X.X.X
+description DESCRIPTION
+object network NAME
+description DESCRIPTION
+nat dynamic Pool_NAME
 
 # PAT
 - Sample configuration:
 
-nat (any,OUTSIDE_BORDER) after-auto 1 source dynamic any interface
+nat (any,OUTSIDE) after-auto 1 source dynamic any interface
 
 # Access-lists Overview
 - Filtering direction
